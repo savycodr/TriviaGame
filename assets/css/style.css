@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+    display: block;
+  }
+  
+body{
+      /* this let background pattern go edge to edge */
+      margin: 0px 0px 0px 0px; 
+      height: 100%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: #777777;
+  }
+  a {
+    /* can we fix this to the bottom of the page? */
+    left: 0;
+    bottom: 0;
+    color: #777777;
+    padding-left: 10px;
+    font-size: 10px; 
+    text-align: left;
+}
+
+.h1 {
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* this defines our wrapper for webpage background */
+#pattern{
+    
+    /* background color will ony appear if background image is unavailable */
+    background-color: cyan;
+    background-image: url("../images/batthern.png");
+    /*width: 100%;*/
+    /* Note height: auto was very important to make sure the background image filled in entirely (especially on the long porfolio.html page */
+    height: auto !important;
+    
+     /* Note height at 100% is very important for sticky footer */
+    height: 100%;
+    padding-bottom: 80px;
+
+    /* needed to embed container */
+    position: relative;
+
+    /* Preserve aspet ratio of background image*/
+    min-width: 100%;
+    min-height: 100%;
+
+    padding-top: 10px;
+}

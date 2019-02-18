@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trivia Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="container-fluid" id="pattern" >
+    <p class="h1">Trivia Game</p>
+    <div class="container border border-secondary mt-md-3 mb-md-5" style="background-color: #ffffff;">
+
+
+      <div class="container mt-md-3 mb-md-5" id="firstScreen">
+        <div class="row" >
+          <div class="col-md-2"></div>
+          <div class="col-md-8 text-center">
+            <!--These are the directions-->
+            <p>Welcome to the Trivia game. You will have 30 seconds to answer each question. Good luck!</p>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row pt-md-5" >
+          <div class="col-md-4"></div>
+          <div class="col-md-4  text-center">
+            <!--This is the where the start button goes-->
+            <button type="button" class="btn btn-outline-secondary btn-lg" id="startBtn">Start</button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div> <!-- end of firstScreen-->
+
+      <div class="container mt-md-3 mb-md-5" id="secondScreen" >
+        <div class="row" >
+          <div class="col-md-2"></div>
+          <div class="col-md-8 text-center">
+              <p> Your time remaining:</p>
+            <!--The time remaining goes here-->
+            <div id="timeRemainingDiv">
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+         
+        <div class="row" >
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+          <!--The question goes here-->
+            <div id="questionDiv">
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+
+        <div class="row" >
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <!--The multiple choice selections go here-->
+            <div id="selectionDiv">
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div> <!--end of second screen-->
+
+
+      <div class="container mt-md-3 mb-md-5" id="thirdScreen" >
+            <div class="row" >
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 text-center">
+                        <p> Your time remaining:</p>
+                      <!--The time remaining goes here-->
+                      <div id="3timeRemainingDiv">
+                      </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                  </div>
+
+            <div class="row" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8 text-center">
+                <!--Message that you are correct or wrong goes here-->
+                <div id="MessageDiv">
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+             
+            <div class="row" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8  text-center">
+              <!--Correct anser goes here-->
+                <div id="answerDiv">
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+    
+            <div class="row" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <!--Image goes here -->
+                <div id="imageDiv">
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div> <!--end of third screen-->
+
+    </div> <!-- end of the container div-->
+    <!--  add a credit page-->
+    <a href="credit.html" target="_blanK" >Click here for credits</a>
+</div> <!--end of pattern wrapper div-->
+    
+<!-- Here we added a link to the jQuery library -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>
