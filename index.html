@@ -19,7 +19,7 @@
           <div class="col-md-2"></div>
           <div class="col-md-8 text-center">
             <!--These are the directions-->
-            <p>Welcome to the Trivia game. You will have 30 seconds to answer each question. Good luck!</p>
+            <p>Welcome to the Trivia game. You will have 15 seconds to answer each question. Good luck!</p>
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -101,6 +101,59 @@
     
             <div class="row" >
               <div class="col-md-2"></div>
+              <div class="col-md-8 text-center">
+                <!--Image goes here -->
+                    <img src="assets/images/moon-1859616_640.jpg" class="img-responsive" alt="answer" id="imageDiv">
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div> <!--end of third screen-->
+
+          <div class="container mt-md-3 mb-md-5" id="fourthScreen" >
+
+            <div class="row" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8 text-center">
+                <!--Message that you are correct or wrong goes here-->
+                <div>
+                  <p>You've finished. Here's how you did:</p>
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+             
+            <div class="row" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8  text-center">
+              <!--Number of correct answers goes here-->
+                <div id="correctAnswersDiv">
+                </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+
+            <div class="row" >
+                <div class="col-md-2"></div>
+                <div class="col-md-8  text-center">
+                <!--Number of wrong answers goes here-->
+                  <div id="wrongAnswersDiv">
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+
+              <div class="row" >
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8  text-center">
+                  <!--Number of unanswered goes here-->
+                    <div id="noAnswersDiv">
+                    </div>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+    
+            <div class="row" >
+              <div class="col-md-2"></div>
               <div class="col-md-8">
                 <!--Image goes here -->
                 <div id="imageDiv">
@@ -108,7 +161,19 @@
               </div>
               <div class="col-md-2"></div>
             </div>
-          </div> <!--end of third screen-->
+
+            <div class="row" >
+                <div class="col-md-2"></div>
+                <div class="col-md-8   text-center">
+                  <p> Would you like to play again?</p>
+                  <!--restart button -->
+                  <button type="button" class="btn btn-outline-secondary btn-lg" id="restartBtn">Restart</button>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+          </div> <!--end of fourth screen-->
+
+
 
     </div> <!-- end of the container div-->
     <!--  add a credit page-->

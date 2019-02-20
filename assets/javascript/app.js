@@ -4,12 +4,16 @@ $(document).ready(function()
   $("#secondScreen").hide();
   // hide the answer screen until user clicks an answer
   $("#thirdScreen").hide();
+  // hide the game completed screen until user answers all questions
+  $("#fourthScreen").hide();
 
 
   // tells us if clock is running
   var clockRunning = false;
-  // clock counts down from 30
-  var time=15;
+
+  // amount of time the player gets to answer the quesion
+  var time;
+ 
   //  Variable that will hold our setInterval that runs the clock
   var intervalId;
 
@@ -70,7 +74,9 @@ $("#startBtn").on("click", function(){
         
         // write to screen that you are right
         $("#MessageDiv").text("You are Correct!");
-        // increase the nuber correct
+        $("#answerDiv").text("");
+
+        // increase the number correct
         numCorrect++;
 
       } else {
@@ -81,6 +87,8 @@ $("#startBtn").on("click", function(){
         // increment the number wrong
         numWrong++;
       }
+      // display the image
+      $("#imageDiv").attr("src", challenge.image);
        
       // hide the question screen 
       $("#secondScreen").hide();
@@ -91,15 +99,15 @@ $("#startBtn").on("click", function(){
       iChallenge++;
 
        console.log("iChallenge is " + iChallenge + " and number of challenges is " + challenges.length);
-       // In 5 seconds, move on to the next challenge
+       // In 3 seconds, move on to the next challenge
        // Note I don't love this circular programming
        if (iChallenge<challenges.length) {
-         setTimeout(displayAnotherChallenge, 5000); 
+         setTimeout(displayAnotherChallenge, 3000); 
        }
        else {
-         // In 5 seconds, move on to end screen
+         // In 3 seconds, move on to end screen
          console.log("we are finished");
-         setTimeout(displayFinalScreen, 5000); 
+         setTimeout(displayFinalScreen, 3000); 
        }
 
     }); // end of clickevent
@@ -114,29 +122,46 @@ $("#startBtn").on("click", function(){
 
   }// end of displayChallenge function
 
-
+  // this function shows the next question in the trivia game and resets the clock.
  function displayAnotherChallenge(){
    // start the clock
    startClock();
-   alert("wed like to show next challenge");
    // remove the answer screen and show the challenge screen
-  $("#thirdScreen").hide();
-  $("#secondScreen").show();
+   $("#thirdScreen").hide();
+   $("#secondScreen").show();
    displayChallenge();
  }
  
-  
-
+  // This function brings up the last screen to show the player their final scores
   function displayFinalScreen(){
-    alert("youre done");
-
+    
     //display results
+    $("#correctAnswersDiv").text("Correct Answers: " + numCorrect);
+    $("#wrongAnswersDiv").text("Incorrect Answers: " + numWrong);
+    $("#noAnswersDiv").text("Unanswered: " + numTimeOuts);
+    $("#thirdScreen").hide();
+    $("#fourthScreen").show();
 
     // give the user an option for another game
-
-    // will need a reset funcion
+    $("#restartBtn").on("click", function(){
+      // will need to reset 
+      console.log("restarting");
+      // number of correct answers
+      numCorrect = 0;
+      // number of incorrect answers
+      numWrong = 0;
+      // number of times ran out of time
+      numTimeOuts = 0;
+      // what challenge are we on?
+      iChallenge = 0;
+      startClock();
+      // remove the fourth screen (directions and start) and show the second
+      $("#fourthScreen").hide();
+      $("#secondScreen").show();
+      displayChallenge();
+    });
+    
   }
- 
 
   // populate the multiple choice options for the current challenge
   function populateSelection(sels)
@@ -155,35 +180,13 @@ $("#startBtn").on("click", function(){
     }
   }
 
-
-  function populateChallenges() {
-    
-    // populate an array of challenges
-    var challengeArray = [];
-
-    // create an object with questions, mutliple choice options, and the correct answer
-    var challenge = {
-      question:"Who is your favorite bear?",
-      options:["carebear", "pooh bear", "smokey the bear", "paddington"],
-      correctAnswer: 0
-    };
-    challengeArray.push(challenge);
-
-    challenge = {
-      question:"Who is your favorite mouse?",
-      options:["squeky", "cheesy", "mickey", "mousey"],
-      correctAnswer: 3
-    };
-    challengeArray.push(challenge);  
-    return challengeArray;
-  }
-
   // start the clock countdown
   function startClock() {
-
+ 
     // DONE: Use setInterval to start the count here and set the clock to running.
     if (!clockRunning) {
-    
+      // clock counts down from 30
+      time=15;
       // Display the time initial 30 seconds
       $("#timeRemainingDiv").text(time);
       // this will run every 1 second
@@ -201,6 +204,7 @@ $("#startBtn").on("click", function(){
   }
 
   // this function counts down the time and displays the time left
+  // If clock get to zero, let the user know and move to the next question
   function countDown() {
 
     //decrease time by 1, remember we cant use "this" here.
@@ -232,9 +236,6 @@ $("#startBtn").on("click", function(){
       // increment the challenge iterator
       iChallenge++;
 
-      // reset the clock to 30
-      time=15;
-
        console.log("iChallenge is " + iChallenge + " and number of challenges is " + challenges.length);
        // In 5 seconds, move on to the next challenge
        // Note I don't love this circular programming
@@ -246,10 +247,76 @@ $("#startBtn").on("click", function(){
          console.log("we are finished");
          setTimeout(displayFinalScreen, 5000); 
        }
-
-    }
-  
-  
+    }  
   }
+
+  function populateChallenges() {
+    
+    // create an object with questions, mutliple choice options, and the correct answer
+    var challengeArray = [{
+      question:"What is the largest animal currently on Earth?",
+      options:["Blue Whale", "Orca", "Colossal Squid", "Giraffe"],
+      correctAnswer: 0,
+      image: "assets/images/blue-whale-1198719_640.jpg"
+    },
+    {
+      question:"Which of the following bones is not in the leg?",
+      options:["Fibula ", "Tibia", "Patella", "Radius"],
+      correctAnswer: 3,
+      image: "assets/images/jogging-2343558_640.jpg"
+    },
+    {
+      question:"How many chromosomes are in your body cells?",
+      options:["21 ", "22", "23", "24"],
+      correctAnswer: 2,
+      image: "assets/images/microbiology-163470_640_small.jpg"
+    },
+    {
+      question:"Which element has the highest melting point?",
+      options:["Platinum ", "Tungsten", "Carbon", "Osmium"],
+      correctAnswer: 2,
+      image: "assets/images/charcoal-1618255_640.jpg"
+
+    },
+    {
+      question:"Human cells typically have how many copies of each gene?",
+      options:["1", "2", "3", "23"],
+      correctAnswer: 1,
+      image: "assets/images/microbiology-163470_640_small.jpg"
+    },
+    {
+      question:"Which gas forms about 78% of the Earth's atmosphere?",
+      options:["Argon ", "Oxygen", "Carbon Dioxide", "Nitrogen"],
+      correctAnswer: 3,
+      image: "assets/images/earth-11015_640.jpg"
+    },
+    {
+      question:"In what year did Apple introduce a touchscreen cellphone called the iPhone?",
+      options:["1996", "2000 ", "2007", "2013"],
+      correctAnswer: 2,
+      image: "assets/images/iphone-410311_640.jpg"
+    },
+    {
+      question:"Which Apollo mission was the first one to land on the Moon?",
+      options:["Apollo 11", "Apollo 10 ", "Apollo 9", "Apollo 13"],
+      correctAnswer: 0,
+      image: "assets/images/moon-1859616_640.jpg"
+    },
+    {
+      question:"In 1832, Jeanne Villepreux-Power invented something to help with her with observations and experiments on the marine species. Was it a:",
+      options:["Submersible ", "Glass Aquarium", "Snorkel", "Dolphin Saddle"],
+      correctAnswer: 1,
+      image: "assets/images/kitten-1154693_640.jpg"
+    },
+    {
+      question:"In 1966 Stephanie Kwolek patented a super-strong plastic called ",
+      options:["Kevlar", "Rayon", "Tencel", "Gortex"],
+      correctAnswer: 0,
+      image: "assets/images/police-1058422_640.jpg"
+    }];
+   
+    return challengeArray;
+  }
+
 
 });
