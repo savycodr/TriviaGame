@@ -8,7 +8,7 @@ body{
       margin: 0px 0px 0px 0px; 
       height: 100%;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
-      color: #777777;
+      color: #696969;
   }
   a {
     /* can we fix this to the bottom of the page? */
@@ -21,9 +21,14 @@ body{
 }
 
 .h1 {
-  color: black;
+  color: #ffffff;
+  //color: black;
   text-align: center;
   padding-top: 10px;
+}
+
+#imageDiv{
+  height: 150px;
 }
 
 /* this defines our wrapper for webpage background */
@@ -48,4 +53,26 @@ body{
     min-height: 100%;
 
     padding-top: 10px;
+}
+/* this defines our wrapper for webpage background */
+#gameTitle{
+    
+  /* background color will ony appear if background image is unavailable */
+  background-color: cyan;
+  background-image: url("../images/microbiology-163470_640_small.jpg");
+  /*width: 100%;*/
+  /* Note height: auto was very important to make sure the background image filled in entirely (especially on the long porfolio.html page */
+  height: auto !important;
+  
+   /* Note height at 100% is very important for sticky footer */
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  /* needed to embed container */
+  position: relative;
+
+  /* Preserve aspet ratio of background image*/
+  min-width: 100%;
+  min-height: 100%;
 }

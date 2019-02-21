@@ -227,7 +227,8 @@ $("#startBtn").on("click", function(){
       // write to screen the correct answer
       $("#MessageDiv").text("Sorry, you've run out of time. The answer is ");
       $("#answerDiv").text(challenge.options[challenge.correctAnswer]);
-
+      // display the image
+      $("#imageDiv").attr("src", challenge.image);
       // hide the question screen 
       $("#secondScreen").hide();
       // show the results screen
