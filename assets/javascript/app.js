@@ -224,6 +224,8 @@ $("#startBtn").on("click", function(){
        // increment the number wrong
        numTimeOuts++;
 
+       // write to screen the time left on teh third screen
+       $("#3timeRemainingDiv").text(time);
       // write to screen the correct answer
       $("#MessageDiv").text("Sorry, you've run out of time. The answer is ");
       $("#answerDiv").text(challenge.options[challenge.correctAnswer]);
