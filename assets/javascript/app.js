@@ -112,13 +112,15 @@ $("#startBtn").on("click", function(){
 
     }); // end of clickevent
 
-    //add listeners for the mouseover events
+    //add listeners for the mouseover events 
     $(".selDiv").mouseover(function() {
-      $(this).css("color", "red");
+     $(this).css("color", "red");
+
     });
     $(".selDiv").mouseout(function() {
       $(this).css("color", "black");
     });
+
 
   }// end of displayChallenge function
 
@@ -174,7 +176,7 @@ $("#startBtn").on("click", function(){
       // populate div to hold the selection
       var selDiv = $("<div>");
       selDiv.text(sels[i]);
-      selDiv.attr("class", "selDiv")
+      selDiv.attr("class", "selDiv ")
       selDiv.attr("data-option", i);
       $("#selectionDiv").append(selDiv);
     }
@@ -305,21 +307,36 @@ $("#startBtn").on("click", function(){
       correctAnswer: 0,
       image: "assets/images/moon-1859616_640.jpg"
     },
+    /*
     {
       question:"In 1832, Jeanne Villepreux-Power invented something to help with her with observations and experiments on the marine species. Was it a:",
       options:["Submersible ", "Glass Aquarium", "Snorkel", "Dolphin Saddle"],
       correctAnswer: 1,
       image: "assets/images/kitten-1154693_640.jpg"
     },
+    */
+    {
+      question:"How many toes does a cat have?",
+      options:["16", "18", "20", "25"],
+      correctAnswer: 1,
+      image: "assets/images/kitten-1154693_640.jpg"
+    },
+    /*
     {
       question:"In 1966 Stephanie Kwolek patented a super-strong plastic called ",
       options:["Kevlar", "Rayon", "Tencel", "Gortex"],
       correctAnswer: 0,
-      image: "assets/images/police-1058422_640.jpg"
+      image: "assets/images/police-1058422_640.jpg"   
     }];
-   
-    return challengeArray;
-  }
+     */
+  {
+    question:"The first LEGOland amusement park opened in 1968 at the site of the original workshop where LEGO was first conceived. Where was it?",
+    options:["Billund, Denmark", "London, England", "Los Angeles, California", "Orlando, Florida"],
+    correctAnswer: 0,
+    image: "assets/images/police-1058422_640.jpg"
+  }];
 
+  return challengeArray;
 
-});
+}
+}); // end of documnet.ready function

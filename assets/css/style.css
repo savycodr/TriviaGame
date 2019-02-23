@@ -10,7 +10,8 @@ body{
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: #696969;
   }
-  a {
+
+  a.credit {
     /* can we fix this to the bottom of the page? */
     left: 0;
     bottom: 0;
@@ -18,6 +19,22 @@ body{
     padding-left: 10px;
     font-size: 10px; 
     text-align: left;
+}
+
+/*
+a.specialeffects:hover {
+  color: #ffffff ;
+  background-color: #17a2b8 ;
+}
+*/
+
+#MessageDiv{
+  font-size: 20px;
+}
+
+#answerDiv {
+  color: #17a2b8;
+  font-size: 24px;
 }
 
 .h1 {

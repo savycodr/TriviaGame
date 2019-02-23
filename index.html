@@ -14,8 +14,7 @@
         <p class="h1">STEM Trivia Game</p>
     </div>
     
-    <div class="container border border-secondary mt-md-3 mb-md-5" style="background-color: #ffffff;">
-
+    <div class="container  mt-md-3 mb-md-5" style="background-color: #ffffff; border-style: solid ;border-color: #17a2b8; border-width: 3px">
 
       <div class="container mt-md-3 mb-md-5" id="firstScreen">
         <div class="row pt-md-4" >
@@ -26,11 +25,11 @@
           </div>
           <div class="col-md-2"></div>
         </div>
-        <div class="row pt-md-5 pb-md-2" >
+        <div class="row pt-md-5 pb-md-2 pb-sm-2 pb-xs-2" >
           <div class="col-md-4"></div>
           <div class="col-md-4  text-center">
             <!--This is the where the start button goes-->
-            <button type="button" class="btn btn-outline-secondary btn-lg" id="startBtn">Start</button>
+            <button type="button" class="btn btn-outline-info btn-lg" id="startBtn">Start</button>
           </div>
           <div class="col-md-4"></div>
         </div>
@@ -48,7 +47,7 @@
           <div class="col-md-2"></div>
         </div>
          
-        <div class="row pt-md-3 pb-md-2 border-top" >
+        <div class="row pt-md-3 pb-md-2 " style=" border-top: 1px double #17a2b8;" >
           <div class="col-md-2"></div>
           <div class="col-md-8">
           <!--The question goes here-->
@@ -72,17 +71,15 @@
 
       <div class="container mt-md-3 mb-md-5" id="thirdScreen" >
             <div class="row pb-md-2" >
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8 text-center">
-                        <p> Your time remaining:</p>
-                      <!--The time remaining goes here-->
-                      <div id="3timeRemainingDiv">
-                      </div>
-                    </div>
-                    <div class="col-md-2"></div>
-                  </div>
-
-            <div class="row  pt-md-3 pb-md-2 border-top" >
+              <div class="col-md-2"></div>
+              <div class="col-md-8 text-center">
+                  <p> Your time remaining:</p>
+                <!--The time remaining goes here-->
+                <div id="3timeRemainingDiv"> </div>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+            <div class="row  pt-md-3 pb-md-2"  style=" border-top: 1px double #17a2b8;" >
               <div class="col-md-2"></div>
               <div class="col-md-8 text-center">
                 <!--Message that you are correct or wrong goes here-->
@@ -153,12 +150,12 @@
                   <div class="col-md-2"></div>
                 </div>
 
-              <div class="row  pb-md-2" >
+              <div class="row  py-md-2" >
                 <div class="col-md-2"></div>
                 <div class="col-md-8   text-center">
-                  <p> Would you like to play again?</p>
+                  <p style="color: #17a2b8">  Would you like to play again?</p>
                   <!--restart button -->
-                  <button type="button" class="btn btn-outline-secondary btn-lg" id="restartBtn">Restart</button>
+                  <button type="button" class="btn btn-outline-info btn-lg" id="restartBtn">Restart</button>
                 </div>
                 <div class="col-md-2"></div>
               </div>
@@ -168,7 +165,7 @@
 
     </div> <!-- end of the container div-->
     <!--  add a credit page-->
-    <a href="credit.html" target="_blanK" >Click here for credits</a>
+    <a href="credit.html" target="_blanK" class="credit">Click here for credits</a>
 </div> <!--end of pattern wrapper div-->
     
 <!-- Here we added a link to the jQuery library -->
