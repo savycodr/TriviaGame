@@ -94,3 +94,41 @@ a.specialeffects:hover {
   min-width: 100%;
   min-height: 100%;
 }
+
+/* You use `980px` because you never want any of the content to be cut off. Since the desktop layout is about 960px wide, you want the media queries to kick in before your content gets cut off.
+
+ `768px` is about the width of a tablet and `640px` is about the width of a phone in landscape. */
+
+/* Width at 980px and below */
+@media screen and (max-width: 980px) {
+  
+  .borderDiv{
+    width: 100%;
+    margin:auto;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+  }
+}
+
+
+/* Width at 768px and below */
+@media screen and (max-width: 768px) {
+
+  .borderDiv{
+      width: 100%;
+      margin:auto;
+      padding: 10px 10px 10px 10px;
+      margin-top: 10px;
+  }
+}
+
+/* Width at 640px and below */
+@media screen and (max-width: 640px) {
+ 
+  .borderDiv{
+      width: 100%;
+      margin:auto;
+      padding: 10px 10px 10px 10px;
+  }
+
+}
