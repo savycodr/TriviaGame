@@ -8,6 +8,7 @@ body{
       margin: 0px 0px 0px 0px; 
       height: 100%;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
       color: #696969;
   }
 
@@ -39,7 +40,6 @@ a.specialeffects:hover {
 
 .h1 {
   color: #ffffff;
-  //color: black;
   text-align: center;
   padding-top: 10px;
 }

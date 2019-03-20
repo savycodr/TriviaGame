@@ -259,7 +259,7 @@ $("#startBtn").on("click", function(){
     
     // create an object with questions, mutliple choice options, and the correct answer
     var challengeArray = [{
-      question:"What is the largest animal currently on Earth?",
+      question:"Which creature has the largest heart? (It weighs more than 1,500 pounds.)",
       options:["Blue Whale", "Orca", "Colossal Squid", "Giraffe"],
       correctAnswer: 0,
       image: "assets/images/blue-whale-1198719_640.jpg"
@@ -277,7 +277,7 @@ $("#startBtn").on("click", function(){
       image: "assets/images/microbiology-163470_640_small.jpg"
     },
     {
-      question:"Which element has the highest melting point?",
+      question:"Diamonds are mostly composed of which element?",
       options:["Platinum ", "Tungsten", "Carbon", "Osmium"],
       correctAnswer: 2,
       image: "assets/images/charcoal-1618255_640.jpg"
@@ -290,7 +290,7 @@ $("#startBtn").on("click", function(){
       image: "assets/images/microbiology-163470_640_small.jpg"
     },
     {
-      question:"Which gas forms about 78% of the Earth's atmosphere?",
+      question:"What is the most abundant gas in the Earth's atmosphere? It makes up about 78%.",
       options:["Argon ", "Oxygen", "Carbon Dioxide", "Nitrogen"],
       correctAnswer: 3,
       image: "assets/images/earth-11015_640.jpg"
@@ -307,34 +307,18 @@ $("#startBtn").on("click", function(){
       correctAnswer: 0,
       image: "assets/images/moon-1859616_640.jpg"
     },
-    /*
-    {
-      question:"In 1832, Jeanne Villepreux-Power invented something to help with her with observations and experiments on the marine species. Was it a:",
-      options:["Submersible ", "Glass Aquarium", "Snorkel", "Dolphin Saddle"],
-      correctAnswer: 1,
-      image: "assets/images/kitten-1154693_640.jpg"
-    },
-    */
     {
       question:"How many toes does a cat have?",
       options:["16", "18", "20", "25"],
       correctAnswer: 1,
       image: "assets/images/kitten-1154693_640.jpg"
     },
-    /*
     {
-      question:"In 1966 Stephanie Kwolek patented a super-strong plastic called ",
-      options:["Kevlar", "Rayon", "Tencel", "Gortex"],
+      question:"The first LEGOland amusement park opened in 1968 at the site of the original workshop where LEGO was first conceived. Where was it?",
+      options:["Billund, Denmark", "London, England", "Los Angeles, California", "Orlando, Florida"],
       correctAnswer: 0,
-      image: "assets/images/police-1058422_640.jpg"   
+      image: "assets/images/police-1058422_640.jpg"
     }];
-     */
-  {
-    question:"The first LEGOland amusement park opened in 1968 at the site of the original workshop where LEGO was first conceived. Where was it?",
-    options:["Billund, Denmark", "London, England", "Los Angeles, California", "Orlando, Florida"],
-    correctAnswer: 0,
-    image: "assets/images/police-1058422_640.jpg"
-  }];
 
   return challengeArray;
 
