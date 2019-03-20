@@ -23,6 +23,8 @@ After each question has been answered or after the 15 seconds has expired withou
 
 * The game uses setTimeout to display the answer screen for 5 seconds.
 
+* Utilizes Bootstrap CSS library.
+
 * The game is mobile responsive. It is fun to play on a tablet or phone.
 
 
